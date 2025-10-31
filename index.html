@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="id" data-theme="romantic">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Happy Birthday, Sayang! 💖</title>
+  <meta name="description" content="Website ulang tahun interaktif untuk orang tersayang." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600..900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Canvas Confetti -->
+  <canvas id="confetti-canvas" aria-hidden="true"></canvas>
+
+  <!-- Floating Hearts Container -->
+  <div id="hearts-layer" aria-hidden="true"></div>
+
+  <header id="hero" class="container">
+    <nav class="topbar" aria-label="Navigasi utama">
+      <div class="logo" aria-label="Logo">💕</div>
+      <div class="actions">
+        <button id="playPauseBtn" class="btn primary" aria-pressed="false" aria-label="Putar musik">
+          ▶️ Musik
+        </button>
+        <button id="themeToggle" class="btn" aria-pressed="false" aria-label="Ganti tema">
+          🌗 Tema
+        </button>
+      </div>
+    </nav>
+
+    <div class="hero-inner">
+      <h1 class="title">
+        Selamat Ulang Tahun, <span id="gfName"></span>! <span class="blink">✨</span>
+      </h1>
+      <p class="subtitle" id="typing" aria-live="polite"></p>
+      <div class="hero-cta">
+        <a href="#letter" class="btn primary large">Surat buat kamu 💌</a>
+        <button id="celebrateBtn" class="btn outline large">YEAYYYYYY! 🎉</button>
+      </div>
+      <div class="countdown" id="countdown" aria-live="polite"></div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Love Letter Envelope -->
+    <section id="letter" class="section container">
+      <h2 class="section-title">Surat Cinta Untukmu</h2>
+      <div class="envelope" role="button" tabindex="0" aria-expanded="false" aria-label="Buka surat cinta">
+        <div class="envelope__back"></div>
+        <div class="envelope__flap"></div>
+        <div class="envelope__letter">
+          <div class="letter-content">
+            <h3>Untuk <span id="nameInLetter"></span> 💖</h3>
+            <p id="letterText">
+              Terima kasih sudah menjadi cahaya yang selalu menghangatkan hariku.
+              Di setiap tawa dan cerita, aku jatuh cinta lagi—dan lagi.
+              Semoga hari ini penuh dengan pelukan, kue, dan segala hal yang bikin kamu tersenyum.
+              I love you, always. 🥰
+            </p>
+            <p class="signature">— Dari aku, yang selalu sayang kamu.</p>
+          </div>
+        </div>
+        <div class="envelope__front"></div>
+      </div>
+      <p class="hint">Klik/Enter untuk membuka. Akan ada kejutan! 🎊</p>
+    </section>
+
+    <!-- Gallery Carousel -->
+    <section id="gallery" class="section alt-bg">
+      <div class="container">
+        <h2 class="section-title">Galeri Kenangan Kita 📸</h2>
+        <div class="carousel" aria-roledescription="carousel" aria-label="Galeri foto kenangan">
+          <button class="carousel-btn prev" aria-label="Sebelumnya">‹</button>
+          <div class="carousel-track" id="carouselTrack">
+            <!-- Ganti src gambar di script CONFIG -->
+          </div>
+          <button class="carousel-btn next" aria-label="Selanjutnya">›</button>
+        </div>
+        <div class="carousel-dots" id="carouselDots" role="tablist" aria-label="Pilih slide"></div>
+      </div>
+    </section>
+
+    <!-- Timeline Memories -->
+    <section id="timeline" class="section container">
+      <h2 class="section-title">Timeline Cinta Kita ⏳</h2>
+      <ol class="timeline">
+        <!-- Item diisi dari CONFIG -->
+      </ol>
+    </section>
+
+    <!-- Reasons I Love You -->
+    <section id="reasons" class="section alt-bg">
+      <div class="container">
+        <h2 class="section-title">10 Alasan Aku Cinta Kamu 💘</h2>
+        <div class="reasons-grid" id="reasonsGrid">
+          <!-- Card diisi dari CONFIG -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Love Quiz -->
+    <section id="quiz" class="section container">
+      <h2 class="section-title">Mini Kuis Cinta 💞</h2>
+      <div class="quiz-card" id="quizCard" aria-live="polite">
+        <!-- Pertanyaan diisi dari CONFIG -->
+      </div>
+    </section>
+
+    <!-- Wish Wall -->
+    <section id="wish-wall" class="section alt-bg">
+      <div class="container">
+        <h2 class="section-title">Papan Harapan & Pesan 🎀</h2>
+        <form id="wishForm" class="wish-form" autocomplete="off" aria-label="Tambahkan pesan">
+          <input id="wishInput" class="input" type="text" placeholder="Tulis pesan manis di sini..." maxlength="120" required />
+          <button class="btn primary" type="submit">Tambah</button>
+          <button class="btn" type="button" id="clearWishes">Bersihkan</button>
+        </form>
+        <div id="wishBoard" class="wish-board" aria-live="polite" aria-label="Daftar pesan"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer container">
+    <p>Made with 💖 khusus untuk <span id="nameInFooter"></span>. Semoga harimu seindah senyummu.</p>
+  </footer>
+
+  <!-- Audio (ganti di CONFIG) -->
+  <audio id="bgm" preload="auto" crossorigin="anonymous"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
