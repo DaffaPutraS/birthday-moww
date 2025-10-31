@@ -1,11 +1,11 @@
 // CONFIG: Edit bagian ini untuk personalisasi cepat
 const CONFIG = {
-  gfName: "Sayangku",
+  gfName: "Moww",
   birthdayDate: "2025-12-31T00:00:00", // Format ISO (untuk countdown), atau kosongkan ""
   typingLines: [
-    "Hari ini milikmu. Dan aku milikmu setiap hari. 💗",
-    "Semoga semua mimpimu mendekat satu per satu. ✨",
-    "Terima kasih sudah jadi rumah ter-nyaman untuk hatiku. 🏡"
+    "Semoga panjang umur dan bahagia selalu sayangg. 💗",
+    "Semoga apa yang kamu inginkan tercapai. ✨",
+    "Makasih udah jadi kamu yang spesial di hidup aku. 🥹"
   ],
   // Link musik favorit (pastikan CORS/https). Bisa YouTube audio direct tidak disarankan; pakai file mp3 sendiri jika bisa.
   musicSrc: "https://cdn.pixabay.com/download/audio/2022/10/11/audio_2b9f4b3e3d.mp3?filename=romantic-ambient-123422.mp3",

@@ -1,14 +1,18 @@
 <!doctype html>
 <html lang="id" data-theme="romantic">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Happy Birthday, Sayang! 💖</title>
   <meta name="description" content="Website ulang tahun interaktif untuk orang tersayang." />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600..900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600..900&family=Poppins:wght@300;400;600;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <!-- Canvas Confetti -->
   <canvas id="confetti-canvas" aria-hidden="true"></canvas>
@@ -30,8 +34,11 @@
     </nav>
 
     <div class="hero-inner">
+      <div class="hero-photo">
+        <img src="poto_moww.jpg" alt="Foto Pacar" />
+      </div>
       <h1 class="title">
-        Selamat Ulang Tahun, <span id="gfName"></span>! <span class="blink">✨</span>
+        Haappyyyy Birthdaayyyy, <span id="gfName"></span>! <span class="blink">✨🥳🎉</span>
       </h1>
       <p class="subtitle" id="typing" aria-live="polite"></p>
       <div class="hero-cta">
@@ -112,7 +119,8 @@
       <div class="container">
         <h2 class="section-title">Papan Harapan & Pesan 🎀</h2>
         <form id="wishForm" class="wish-form" autocomplete="off" aria-label="Tambahkan pesan">
-          <input id="wishInput" class="input" type="text" placeholder="Tulis pesan manis di sini..." maxlength="120" required />
+          <input id="wishInput" class="input" type="text" placeholder="Tulis pesan manis di sini..." maxlength="120"
+            required />
           <button class="btn primary" type="submit">Tambah</button>
           <button class="btn" type="button" id="clearWishes">Bersihkan</button>
         </form>
@@ -130,4 +138,5 @@
 
   <script src="script.js"></script>
 </body>
+
 </html>

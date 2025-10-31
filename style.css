@@ -543,3 +543,57 @@ body {
 .envelope.open .envelope__flap {
   transform: rotateX(-175deg) translateZ(1px);
 }
+/* ...existing code... */
+.hero-photo {
+  position: absolute;
+  top: 160px;
+  right: 120px;
+  width: 280px;
+  height: 250px;
+  border-radius: 50%;
+  overflow: visible;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Gradient border effect */
+  background: conic-gradient(from 180deg at 50% 50%, #ff4d8d, #ffd0e2, #8b5cf6, #ff4d8d);
+  padding: 6px;
+  box-shadow: 0 8px 32px 0 rgba(139, 92, 246, 0.18), 0 2px 8px #ff4d8d33;
+}
+.hero-photo img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  border: 5px solid #fff;
+  box-shadow: 0 2px 12px 0 rgba(255, 77, 141, 0.10);
+}
+
+/* Ornamen hati di frame */
+.hero-photo::after {
+  content: "💖";
+  position: absolute;
+  bottom: 10px;
+  right: 18px;
+  font-size: 2.2rem;
+  filter: drop-shadow(0 2px 6px #ff4d8d55);
+  pointer-events: none;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .hero-photo {
+    position: static;
+    margin: 0 auto 16px;
+    width: 120px;
+    height: 120px;
+    padding: 3px;
+  }
+  .hero-photo::after {
+    font-size: 1.2rem;
+    bottom: 4px;
+    right: 8px;
+  }
+}
