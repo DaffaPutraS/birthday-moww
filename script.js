@@ -1,52 +1,35 @@
 // CONFIG: Edit bagian ini untuk personalisasi cepat
 const CONFIG = {
   gfName: "Moww",
-  birthdayDate: "2025-12-31T00:00:00", // Format ISO (untuk countdown), atau kosongkan ""
+  birthdayDate: "2025-11-01T22:00:00", // Format ISO (untuk countdown), atau kosongkan ""
   typingLines: [
     "Semoga panjang umur dan bahagia selalu sayangg. 💗",
     "Semoga apa yang kamu inginkan tercapai. ✨",
     "Makasih udah jadi kamu yang spesial di hidup aku. 🥹"
   ],
   // Link musik favorit (pastikan CORS/https). Bisa YouTube audio direct tidak disarankan; pakai file mp3 sendiri jika bisa.
-  musicSrc: "https://cdn.pixabay.com/download/audio/2022/10/11/audio_2b9f4b3e3d.mp3?filename=romantic-ambient-123422.mp3",
+  musicSrc: "LANY - XXL (Official Lyric Video).mp3",
   gallery: [
-    { src: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1600&auto=format&fit=crop", caption: "Tawa yang pertama kali bikin aku jatuh cinta." },
-    { src: "https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=1600&auto=format&fit=crop", caption: "Langit senja yang kita suka." },
-    { src: "https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?q=80&w=1600&auto=format&fit=crop", caption: "Momen random, tapi rasanya hangat." }
-  ],
-  timeline: [
-    { date: "2023-06-10", title: "Pertama Kenal", detail: "Ngobrol kikuk, tapi hangat. Siapa sangka sejauh ini?" , icon: "💬" },
-    { date: "2023-08-03", title: "Kencan Pertama", detail: "Kopi, tawa, dan deg-degan.", icon: "☕" },
-    { date: "2024-02-14", title: "Kukatakan Suka", detail: "Dan kamu jawab, 'Aku juga' 🥹", icon: "💘" },
-    { date: "2024-12-31", title: "Resolusi Bareng", detail: "Mari kita wujudkan mimpi-mimpi kecil itu.", icon: "🌟" },
-  ],
-  reasons: [
-    { emoji: "😊", front: "Senyummu", back: "Sederhana tapi bikin tenang." },
-    { emoji: "🫶", front: "Perhatianmu", back: "Kecil-kecil, tapi kerasa banget." },
-    { emoji: "🎧", front: "Selera musik", back: "Playlist kamu = mood booster." },
-    { emoji: "🧠", front: "Pintar", back: "Cara kamu mikir itu keren." },
-    { emoji: "🍜", front: "Partner makan", back: "Makan bareng jadi lebih enak." },
-    { emoji: "😂", front: "Humor", back: "Receh? Iya. Lucu? Banget." },
-    { emoji: "🤝", front: "Support", back: "Selalu ada di situ." },
-    { emoji: "🌧️", front: "Sabar", back: "Bahkan saat aku drama." },
-    { emoji: "💬", front: "Cerita", back: "Topiknya gak ada habisnya." },
-    { emoji: "💓", front: "Hati kamu", back: "Tempat pulang paling aman." },
+    { src: "poto_moww6.jpg" },
+    { src: "poto_moww3.jpg" },
+    { src: "poto_moww7.jpg" },
+    { src: "poto_moww5.jpg" }
   ],
   quiz: [
     {
-      q: "Tanggal ulang tahunku kapan? 😉",
-      opts: ["1 Januari", "14 Februari", "31 Desember", "24 Juni"],
-      correct: 2
+      q: "Nama ibu nya Moli siapa?",
+      opts: ["Siti", "Lucy", "Milu", "Sisi"],
+      correct: 3
     },
     {
-      q: "Minuman favoritku?",
-      opts: ["Teh Manis", "Kopi Susu", "Matcha Latte", "Air Putih"],
+      q: "Nama satpam rumah aku siapa?",
+      opts: ["Ujang", "Udin", "Untung", "Asep"],
       correct: 1
     },
     {
-      q: "Kalau lagi bad mood, yang paling aku butuh?",
-      opts: ["Cokelat", "Pelukan kamu", "Tidur", "Jalan-jalan"],
-      correct: 1
+      q: "Berapa kali aku pup kemarin?",
+      opts: ["0", "1", "2", "3"],
+      correct: 0
     }
   ]
 };
@@ -266,7 +249,7 @@ function initQuiz(quiz) {
     if (idx >= quiz.length) {
       card.innerHTML = `
         <div class="quiz-q">Skor kamu: ${score}/${quiz.length} 🥳</div>
-        <p>Kamu memang yang paling ngerti aku! Hadiah: pelukan ekstra hari ini. 🤗</p>
+        <p>Yeayyyy kerenn kamuuu wkwkwkwkkw</p>
         <div><button class="btn primary" id="replayQuiz">Ulangi</button></div>
       `;
       $("#replayQuiz").addEventListener("click", () => { idx = 0; score = 0; render(); });
@@ -329,7 +312,7 @@ function startCountdown(dateStr) {
     const h = Math.floor(diff%86400000/3600000);
     const m = Math.floor(diff%3600000/60000);
     const s = Math.floor(diff%60000/1000);
-    el.textContent = `Menuju hari spesial: ${d}h ${h}j ${m}m ${s}d`;
+    el.textContent = `🍽️🍴🍖Dinner kita nihhh: ${d}h ${h}j ${m}m ${s}d`;
     requestAnimationFrame(() => setTimeout(tick, 500));
   }
   tick();
@@ -343,6 +326,7 @@ function initAudio(src) {
     btn.disabled = true; btn.textContent = "🎵 (Tidak ada musik)"; return;
   }
   audio.src = src;
+  audio.volume = 0.3; // Atur volume di sini (misal 0.2 untuk 20%, 1.0 untuk 100%)
   let playing = false;
 
   async function toggle() {
@@ -367,6 +351,16 @@ function initAudio(src) {
   const unlock = () => { audio.play().then(()=>{ audio.pause(); }).catch(()=>{}); window.removeEventListener("touchstart", unlock); window.removeEventListener("click", unlock); };
   window.addEventListener("touchstart", unlock, { once: true });
   window.addEventListener("click", unlock, { once: true });
+
+  // === Tambahkan baris ini agar auto play saat load ===
+  audio.play().then(() => {
+    playing = true;
+    btn.textContent = "⏸️ Pause";
+    btn.setAttribute("aria-pressed","true");
+  }).catch((e) => {
+    // Jika autoplay diblokir, tidak apa-apa
+    console.warn("Autoplay blocked", e);
+  });
 }
 
 // THEME
@@ -399,8 +393,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Build sections
   initCarousel(CONFIG.gallery);
-  initTimeline(CONFIG.timeline);
-  initReasons(CONFIG.reasons);
   initQuiz(CONFIG.quiz);
   renderWishes();
 
